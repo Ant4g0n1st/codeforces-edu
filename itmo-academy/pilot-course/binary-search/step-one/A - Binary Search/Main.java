@@ -5,10 +5,11 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.Closeable;
 
 public class Main {
 
-    public static class FastReader implements AutoCloseable {
+    public static class FastReader implements Closeable {
 
         private StringTokenizer tokenizer = null;
         private BufferedReader reader = null;
@@ -73,6 +74,7 @@ public class Main {
             }
         }
         writer.flush();
+        reader.close();
     }
 
 }
